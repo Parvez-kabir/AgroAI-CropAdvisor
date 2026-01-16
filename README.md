@@ -3,13 +3,15 @@
 # 🌾 Crop Recommendation System
 
 A Machine Learning–based **Crop Recommendation System** that predicts the most suitable crop based on **soil nutrients and weather conditions**.
-The application is built using **Streamlit** for an interactive UI and a **Random Forest model** for prediction.
+
+The application uses **FastAPI** as the backend to serve the trained **Random Forest model** through APIs, while **Streamlit** is used for an interactive and user-friendly frontend.
 
 ---
-Website Link is here 
-https://randomforestbasedcroprecomendationsystem-snpx6y9fzo6ag6uxg4cln.streamlit.app/
+Website Link is here , You can See and test  Here : 
 
-[text](https://huggingface.co/spaces/AnukulChandra/Crop_Recommendation_System)
+(https://huggingface.co/spaces/AnukulChandra/Crop_Recommendation_System)
+
+---
 
 Go to this link or copy and pest in your Browser to Enter the website.
 
