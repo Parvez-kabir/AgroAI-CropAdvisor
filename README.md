@@ -1,4 +1,20 @@
 
+> ⚠️ **Fork & Contribution Notice**
+>
+> This repository is a **fork** of the original project created by **Parvez Kabir**.
+>
+> My contribution to this project includes:
+>
+> * Designing and implementing a **FastAPI backend**
+> * Deploying the backend and application on **Hugging Face Spaces**
+> * Improving documentation and deployment structure
+>
+> The core idea, dataset, and original implementation belong to the original author.
+> All improvements made here were contributed back via **Pull Requests** to help enhance the original project.
+>
+> 🔗 **Original Repository:**
+> [https://github.com/Parvez-kabir/RandomForest_based_Crop_Recomendation_System](https://github.com/Parvez-kabir/RandomForest_based_Crop_Recomendation_System)
+
 
 # 🌾 Crop Recommendation System
 
