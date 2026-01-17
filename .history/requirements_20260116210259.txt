@@ -4,13 +4,6 @@ numpy
 scikit-learn
 joblib
 plotly
-fastapi
-uvicorn
-numpy
-pandas
-scikit-learn
-joblib
-
 
 
 

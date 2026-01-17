@@ -1,0 +1,22 @@
+{
+    "sourceFile": "main.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1768576366853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1768596966973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n from pydantic import BaseModel\n import numpy as np\n import joblib\n \n+\n # -----------------------------\n # Load model and encoder\n # -----------------------------\n model = joblib.load(\"crop_model.pkl\")\n@@ -11,8 +12,9 @@\n \n # -----------------------------\n # FastAPI app\n # -----------------------------\n+\n app = FastAPI(\n     title=\"Crop Recommendation API\",\n     description=\"Predict the most suitable crop based on soil and weather data\",\n     version=\"1.0\"\n"
+                }
+            ],
+            "date": 1768576366853,
+            "name": "Commit-0",
+            "content": "from fastapi import FastAPI\nfrom pydantic import BaseModel\nimport numpy as np\nimport joblib\n\n# -----------------------------\n# Load model and encoder\n# -----------------------------\nmodel = joblib.load(\"crop_model.pkl\")\nle = joblib.load(\"label_encoder.pkl\")\n\n# -----------------------------\n# FastAPI app\n# -----------------------------\napp = FastAPI(\n    title=\"Crop Recommendation API\",\n    description=\"Predict the most suitable crop based on soil and weather data\",\n    version=\"1.0\"\n)\n\n# -----------------------------\n# Input schema\n# -----------------------------\nclass CropInput(BaseModel):\n    N: float\n    P: float\n    K: float\n    temperature: float\n    humidity: float\n    ph: float\n    rainfall: float\n\n# -----------------------------\n# Health check\n# -----------------------------\n@app.get(\"/\")\ndef root():\n    return {\"status\": \"Crop Recommendation API is running\"}\n\n# -----------------------------\n# Prediction endpoint\n# -----------------------------\n@app.post(\"/predict\")\ndef predict_crop(data: CropInput):\n    input_data = np.array([[\n        data.N,\n        data.P,\n        data.K,\n        data.temperature,\n        data.humidity,\n        data.ph,\n        data.rainfall\n    ]])\n\n    # prediction\n    pred = model.predict(input_data)\n    crop_name = le.inverse_transform(pred)[0]\n\n    # confidence\n    probabilities = model.predict_proba(input_data)[0]\n    confidence = round(float(np.max(probabilities)) * 100, 2)\n\n    return {\n        \"recommended_crop\": crop_name,\n        \"confidence_percent\": confidence\n    }\n"
+        }
+    ]
+}

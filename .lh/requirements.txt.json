@@ -1,0 +1,18 @@
+{
+    "sourceFile": "requirements.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1768576382379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1768576382379,
+            "name": "Commit-0",
+            "content": "streamlit\r\npandas\r\nnumpy\r\nscikit-learn\r\njoblib\r\nplotly\r\nfastapi\r\nuvicorn\r\nnumpy\r\npandas\r\nscikit-learn\r\njoblib\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+        }
+    ]
+}
